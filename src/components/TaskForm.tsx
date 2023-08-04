@@ -29,6 +29,7 @@ export default function TaskForm({ addANewTask }: Props) {
       <h1>Add task</h1>
       <form onSubmit={handleNewTask}>
         <input
+          required
           type="text"
           placeholder="Write a title"
           name="title"
@@ -36,6 +37,7 @@ export default function TaskForm({ addANewTask }: Props) {
           value={task.title}
         />
         <textarea
+          required
           name="description"
           id=""
           rows={2}

@@ -13,7 +13,17 @@ function App() {
     },
   ]);
 
-  const addANewTask = (task: Task) => setTasks([...tasks, task]);
+  const getCurrentTimestamp = (): number => new Date().getTime();
+
+  const addANewTask = (task: Task) =>
+    setTasks([
+      ...tasks,
+      { ...task, id: getCurrentTimestamp(), completed: false },
+    ]);
+
+  const deleteATask = (id: number) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
   return (
     <div>
       <nav>
@@ -29,7 +39,7 @@ function App() {
           </div>
           <div>
             <div>
-              <TaskList tasks={tasks} />
+              <TaskList tasks={tasks} deleteATask={deleteATask} />
             </div>
           </div>
         </div>
