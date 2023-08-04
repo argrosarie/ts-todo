@@ -12,6 +12,8 @@ function App() {
       completed: false,
     },
   ]);
+
+  const addANewTask = (task: Task) => setTasks([...tasks, task]);
   return (
     <div>
       <nav>
@@ -23,7 +25,7 @@ function App() {
       <main>
         <div>
           <div>
-            <TaskForm />
+            <TaskForm addANewTask={addANewTask} />
           </div>
           <div>
             <div>
