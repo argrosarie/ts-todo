@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Task } from "./interfaces/Task";
 import TaskList from "./components/TaskList";
 import TaskForm from "./components/TaskForm";
-import { Box, Container, Grid, IconButton } from "@mui/material";
+import { Container, AppBar, Typography, Box } from "@mui/material";
 
 function App() {
   const [tasks, setTasks] = useState<Task[]>([
@@ -26,26 +26,34 @@ function App() {
     setTasks(tasks.filter((task) => task.id !== id));
   };
   return (
-    <div>
-      <nav>
-        <div>
-          <a href="">Task App</a>
-        </div>
-      </nav>
+    <>
+      <Container
+        sx={{
+          backgroundColor: "#47667b",
+          width: "80vw",
+          height: "500px",
+          borderRadius: "16px",
+          marginTop: "10px",
 
-      <main>
-        <div>
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <AppBar>
+          <Typography>Task App</Typography>
+        </AppBar>
+
+        <Box sx={{ marginTop: "40px" }}>
           <div>
             <TaskForm addANewTask={addANewTask} />
-          </div>
-          <div>
             <div>
               <TaskList tasks={tasks} deleteATask={deleteATask} />
             </div>
           </div>
-        </div>
-      </main>
-    </div>
+        </Box>
+      </Container>
+    </>
   );
 }
 

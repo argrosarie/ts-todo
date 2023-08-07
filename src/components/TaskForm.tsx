@@ -1,5 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Task } from "../interfaces/Task";
+import { Card, TextField, Typography, Button } from "@mui/material";
 
 interface Props {
   addANewTask: (task: Task) => void;
@@ -25,10 +26,10 @@ export default function TaskForm({ addANewTask }: Props) {
     setTask(initialState);
   };
   return (
-    <div>
-      <h1>Add task</h1>
+    <Card>
+      <Typography>Add task</Typography>
       <form onSubmit={handleNewTask}>
-        <input
+        <TextField
           required
           type="text"
           placeholder="Write a title"
@@ -36,7 +37,7 @@ export default function TaskForm({ addANewTask }: Props) {
           onChange={handleInputChange}
           value={task.title}
         />
-        <textarea
+        <TextField
           required
           name="description"
           id=""
@@ -44,9 +45,9 @@ export default function TaskForm({ addANewTask }: Props) {
           placeholder="Write a description"
           onChange={handleInputChange}
           value={task.description}
-        ></textarea>
+        />
         <button>Save</button>
       </form>
-    </div>
+    </Card>
   );
 }

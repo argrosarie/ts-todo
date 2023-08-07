@@ -1,3 +1,4 @@
+import { Grid, Typography, Button, Card } from "@mui/material";
 import { Task } from "../interfaces/Task";
 
 interface Props {
@@ -6,11 +7,10 @@ interface Props {
 }
 export default function TaskCard({ task, deleteATask }: Props) {
   return (
-    <div>
-      <h1>{task.title}</h1>
-      <p>{task.id}</p>
-      <p>{task.description}</p>
-      <button onClick={() => task.id && deleteATask(task.id)}>Delete</button>
-    </div>
+    <Grid>
+      <Typography>{task.title}</Typography>
+      <Typography>{task.description}</Typography>
+      <Button onClick={() => task.id && deleteATask(task.id)}>Delete</Button>
+    </Grid>
   );
 }

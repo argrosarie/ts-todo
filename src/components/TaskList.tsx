@@ -1,5 +1,6 @@
 import { Task } from "../interfaces/Task";
 import TaskCard from "./TaskCard";
+import { Grid } from "@mui/material";
 
 interface Props {
   tasks: Task[];
@@ -9,9 +10,9 @@ export default function TaskList({ tasks, deleteATask }: Props) {
   return (
     <>
       {tasks.map((task, id) => (
-        <div key={id}>
+        <Grid container key={id}>
           <TaskCard task={task} deleteATask={deleteATask} />
-        </div>
+        </Grid>
       ))}
     </>
   );
