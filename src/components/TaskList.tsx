@@ -10,7 +10,7 @@ export default function TaskList({ tasks, deleteATask }: Props) {
   return (
     <>
       {tasks.map((task, id) => (
-        <Grid container key={id}>
+        <Grid container key={id} justifyItems={"center"} alignItems={"center"}>
           <TaskCard task={task} deleteATask={deleteATask} />
         </Grid>
       ))}

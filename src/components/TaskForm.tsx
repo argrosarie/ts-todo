@@ -26,7 +26,7 @@ export default function TaskForm({ addANewTask }: Props) {
     setTask(initialState);
   };
   return (
-    <Card sx={{ padding: "10px", width: "500px" }}>
+    <Card sx={{ padding: "10px", width: "50vw" }}>
       <Typography variant="h6" align="center">
         Add task
       </Typography>
