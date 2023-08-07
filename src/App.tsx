@@ -31,18 +31,17 @@ function App() {
         sx={{
           backgroundColor: "#47667b",
           width: "80vw",
-          height: "500px",
+          height: "100vh",
           borderRadius: "16px",
           marginTop: "10px",
-
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
         }}
       >
-        <AppBar>
-          <Typography>Task App</Typography>
-        </AppBar>
+        <Typography align="center" variant="h4" color="white">
+          Task App
+        </Typography>
 
         <Box sx={{ marginTop: "40px" }}>
           <div>
